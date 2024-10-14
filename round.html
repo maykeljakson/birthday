@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What I Like About You</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .instruction {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #ffe4e1;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .container img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #ff69b4;
+            position: absolute;
+        }
+        .text-item {
+            position: absolute;
+            width: 160px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            transition: transform 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
+            opacity: 0; /* Hidden by default */
+            cursor: pointer;
+        }
+        .text-item.visible {
+            opacity: 1; /* Show the clicked item */
+        }
+        .text1 { top: 10px; left: 50%; transform: translateX(-50%); background-color: #ffadad; }
+        .text2 { bottom: 10px; left: 50%; transform: translateX(-50%); background-color: #ffd6a5; }
+        .text3 { top: 50%; left: 10px; transform: translateY(-50%); background-color: #fdffb6; }
+        .text4 { top: 50%; right: 10px; transform: translateY(-50%); background-color: #caffbf; }
+        .text5 { top: 30px; right: 30px; background-color: #9bf6ff; }
+        .text6 { bottom: 30px; right: 30px; background-color: #a0c4ff; }
+        .text7 { top: 30px; left: 30px; background-color: #bdb2ff; }
+        .text8 { bottom: 30px; left: 30px; background-color: #ffc6ff; }
+    </style>
+</head>
+<body>
+    <!-- Instruction for the user -->
+    <div class="instruction">Click around the circle to reveal what I like about you!</div>
+
+    <div class="container">
+        <!-- Center image of the person -->
+        <img src="birthdayperson.jpg" alt="Person Image">
+        
+        <!-- Text items surrounding the image with background colors -->
+        <div class="text-item text1" onclick="showText(this)">Your endless kindness</div>
+        <div class="text-item text2" onclick="showText(this)">You make everyone smile</div>
+        <div class="text-item text3" onclick="showText(this)">You’re incredibly talented</div>
+        <div class="text-item text4" onclick="showText(this)">You have a great sense of humor</div>
+        <div class="text-item text5" onclick="showText(this)">Your creativity is inspiring</div>
+        <div class="text-item text6" onclick="showText(this)">You’re always there for others</div>
+        <div class="text-item text7" onclick="showText(this)">Your energy lights up the room</div>
+        <div class="text-item text8" onclick="showText(this)">You’re truly one of a kind</div>
+    </div>
+
+    <script>
+        function showText(clickedItem) {
+            // Hide all text items first
+            const items = document.querySelectorAll('.text-item');
+            items.forEach(item => item.classList.remove('visible'));
+
+            // Show only the clicked item
+            clickedItem.classList.add('visible');
+        }
+    </script>
+</body>
+</html>
